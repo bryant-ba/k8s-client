@@ -8,15 +8,15 @@ import (
 	"log"
 )
 
-func GetNameSpace(client *kubernetes.Clientset, ctx context.Context) {
-	ns, err := client.CoreV1().Namespaces().List(context.TODO(), metaV1.ListOptions{})
-	if err != nil {
-		panic(err)
-	}
-	for name := range ns.Items {
-		fmt.Println(name)
-	}
-}
+//func GetNameSpace(client *kubernetes.Clientset, ctx context.Context) {
+//	ns, err := client.CoreV1().Namespaces().List(context.TODO(), metaV1.ListOptions{})
+//	if err != nil {
+//		panic(err)
+//	}
+//	for name := range ns.Items {
+//		fmt.Println(name)
+//	}
+//}
 
 func GetNode(client *kubernetes.Clientset, ctx context.Context) {
 	nodes, err := client.CoreV1().Nodes().List(context.TODO(), metaV1.ListOptions{})
@@ -28,15 +28,15 @@ func GetNode(client *kubernetes.Clientset, ctx context.Context) {
 	}
 }
 
-func GetDeploy(client *kubernetes.Clientset, ctx context.Context, deployName, namespace string) {
-	// get deploy
-	deployment, err := client.AppsV1().Deployments(namespace).Get(ctx, deployName, metaV1.GetOptions{})
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println("deployment name ===> ", deployment.Name)
-	fmt.Println("deployment json ===> ", deployment)
-}
+//func GetDeploy(client *kubernetes.Clientset, ctx context.Context, deployName, namespace string) {
+//	// get deploy
+//	deployment, err := client.AppsV1().Deployments(namespace).Get(ctx, deployName, metaV1.GetOptions{})
+//	if err != nil {
+//		log.Println(err)
+//	}
+//	fmt.Println("deployment name ===> ", deployment.Name)
+//	fmt.Println("deployment json ===> ", deployment)
+//}
 
 func GetPods(client *kubernetes.Clientset, ctx context.Context, namespace string) {
 	// get pod

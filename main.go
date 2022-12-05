@@ -13,10 +13,8 @@ func main() {
 	if err != nil {
 		log.Panic(err)
 	}
-	//client2.GetNameSpace(client, ctx)
+
 	client2.GetNode(client, ctx)
-	namespace := "default"
+	namespace := "iot"
 	client2.GetPods(client, ctx, string(namespace))
-	//client2.GetPVC(client, ctx, namespace)
-	//client2.GetDeploy(client, ctx, deployname, namespace)
 }
