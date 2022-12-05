@@ -14,7 +14,7 @@ func Init() (*kubernetes.Clientset, error) {
 	// 从当前系统环境中读取家目录，然后拼接config 路径
 	// 或者直接给一个kube config的绝对路径字符串也可
 	if home := HomeDir(); home != "" {
-		kubeConfig = flag.String("kubeconfig", filepath.Join(home, ".kube", "config-balin"), "(optional) absolute path to the kubeconfig file")
+		kubeConfig = flag.String("kubeconfig", filepath.Join(home, ".kube", "config"), "(optional) absolute path to the kubeconfig file")
 	} else {
 		kubeConfig = flag.String("kubeconfig", "", "absolute path to the kubeconfig file")
 	}
